@@ -1,0 +1,35 @@
+.NavBar {
+    background-color: var(--bg-dark-black);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* position: fixed; */
+}
+
+.NavBar-Logo {
+    padding: 0.1em 3em;
+}
+
+.NavBar-Logo h1 {
+    background: linear-gradient(to bottom right, #0DA6C2 0%, #0E39C6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.NavBar-Menu {
+    margin-right: 3em;
+    display: flex;
+    justify-content: space-around;
+}
+
+.NavBar-Link {
+    margin: 0 0.5em;
+    padding: 0 0.7em;
+    color: var(--text-secondary);
+    /* color: var(--text-primary); */
+    text-decoration: none;
+}
+.active{
+    color: var(--text-primary);
+}

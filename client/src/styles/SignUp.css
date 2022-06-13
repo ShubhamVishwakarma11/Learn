@@ -1,0 +1,86 @@
+.Signup {
+    background-color: var(--bg-dark-black);
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.learn {
+    background: linear-gradient(to bottom right, #0DA6C2 0%, #0E39C6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.Signup-Branding {
+    margin: 1em;
+}
+
+.branding-text {
+    margin: 0;
+    padding: 0;
+    font-size: 3.5em;
+    color: var(--text-primary);
+}
+
+.Signup-Form {
+    /* width: 500px; */
+    /* text-align: center; */
+}
+.signuptext{
+    display: inline-block;
+    position: relative;
+    left: 1em;     
+    font-size: 2em;
+    transform: scale(1.5);
+    color: var(--text-primary);
+}
+
+.Form-Header {
+    background-color: var(--bg-light-black);
+    display: flex;
+    color: var(--text-secondary);
+    border-radius: 0.4em;
+    justify-content: space-around;
+}
+
+.Header-Student {
+    /* margin: 0.5em;   */
+    padding: 0 2em;
+}
+
+.Header-Teacher {
+    padding: 0 2em;
+}
+
+.active {
+    color: var(--text-primary);
+}
+
+.Form {
+    margin-top: 2em;
+    background-color: var(--bg-light-black);
+    border-radius: 0.4em;
+    /* padding: 2em; */
+}
+
+.Form-Input {
+    background-color: var(--bg-light-black);
+    border: none;
+    color: var(--text-primary);
+    width: 85%;
+    font-size: 1.1em;
+    margin: 1em 2em;
+}
+
+.Form-Button {
+    background-image: var(--cyan-gradient);
+    border: none;
+    color: var(--text-primary);
+    border-radius: 0.4em;
+    width: 85%;
+    font-size: 1.1em;
+    margin: 1em 2em;
+    padding: 0.5em;
+}
