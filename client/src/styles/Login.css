@@ -1,8 +1,9 @@
-.Signup {
+.Login {
     background-color: var(--bg-dark-black);
     margin: 0;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .learn {
@@ -13,7 +14,7 @@
     font-weight: bold;
 }
 
-.Signup-Branding {
+.Login-Branding {
     margin: 1em;
 }
 
@@ -24,11 +25,11 @@
     color: var(--text-primary);
 }
 
-.Signup-Form {
+.Login-Form {
     /* width: 500px; */
     /* text-align: center; */
 }
-.signuptext{
+.Logintext{
     display: inline-block;
     position: relative;
     left: 1em;     
@@ -85,7 +86,7 @@
     padding: 0.5em;
 }
 
-.Login-link {
+.Signup-link {
     color: var(--text-primary);
     text-align: center;
     margin: 1em 2em;

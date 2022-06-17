@@ -1,13 +1,13 @@
 import React from 'react';
+import '../styles/Login.css';
 import GoogleButton from 'react-google-button';
-import { Link } from 'react-router-dom';
-import '../styles/SignUp.css';
+import {Link} from 'react-router-dom';
 
 
-function SignUp(props) {
+function Login(props) {
     return (
-        <div className='Signup'>
-            <div className='Signup-Branding'>
+        <div className='Login'>
+            <div className='Login-Branding'>
                 <p className='branding-text'> The  </p>
                 <p className='branding-text'> One Place </p>
                 <p className='branding-text'> Destination</p>
@@ -15,33 +15,31 @@ function SignUp(props) {
                 <p className='branding-text'> Skills </p>
                 
             </div>
-            <div className='Signup-Form'>
-                <h1 className='signuptext'> Sign Up</h1>
+            <div className='Login-Form'>
+                <h1 className='Logintext'> Log In</h1>
                 <div className='Form-Header'>
                     <div className='Header-Student active'>
-                        <p> Sign up as a Student</p>
+                        <p> Login as a Student</p>
                     </div>
                     <div className='Header-Teacher'>
-                        <p> Sign up as a Teacher</p>
+                        <p> Login as a Teacher</p>
                     </div>
                 </div>
 
                 <div className='Form'>
                     <form>
                         <input className='Form-Input' placeholder='Username'/>
-                        <br/><input className='Form-Input' placeholder='Email'/>
                         <br/><input className='Form-Input' placeholder='Password'/>
-                        <br/><input className='Form-Input' placeholder='Confirm Password'/>
                         <button className='Form-Button'> Sign Up</button>
                         <br/>
-                        <p className='Login-link'>Already have an account? <Link to="/login" >Login</Link></p>
+                        <p className='Login-link'>Don't have an account? <Link to="/signup" >Signup here</Link></p>
                     </form>
                 </div>
                 <br/>
                 <div className='Google-button-div'>
                     <GoogleButton 
                         type='dark'
-                        label='Sign in with Google'
+                        label='Log in with Google'
                         onClick={() => { console.log('Google button clicked') }}  
                     />
                 </div>
@@ -50,4 +48,4 @@ function SignUp(props) {
     )
 }
 
-export default SignUp;
+export default Login;
