@@ -1,10 +1,36 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../styles/Login.css';
 import GoogleButton from 'react-google-button';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
+import useInputState from '../hooks/useInputState';
+import { useUserAuth } from '../context/UserAuthContext';
 
 
 function Login(props) {
+
+    const [email,handleEmail,resetEmail] = useInputState("");
+    const [password,handlePassword,resetPassword] = useInputState("");
+    const [error, setError] = useState("");
+
+    const {logIn} = useUserAuth();
+
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        resetEmail();
+        resetPassword();
+        setError("");
+        try{
+            await logIn(email,password);
+            navigate("/home");
+            
+        } catch (err) {
+            console.log("ERORRRRRRRR!");
+            setError(err.message);
+        }
+    }
+
     return (
         <div className='Login'>
             <div className='Login-Branding'>
@@ -27,10 +53,11 @@ function Login(props) {
                 </div>
 
                 <div className='Form'>
-                    <form>
-                        <input className='Form-Input' placeholder='Username'/>
-                        <br/><input className='Form-Input' placeholder='Password'/>
-                        <button className='Form-Button'> Sign Up</button>
+                    {error && <p> {error} </p>}
+                    <form onSubmit={handleSubmit}>
+                        <input className='Form-Input' placeholder='Username' value={email} onChange={handleEmail}/>
+                        <br/><input className='Form-Input' placeholder='Password' value={password} onChange={handlePassword}/>
+                        <button className='Form-Button'> Login</button>
                         <br/>
                         <p className='Login-link'>Don't have an account? <Link to="/signup" >Signup here</Link></p>
                     </form>
