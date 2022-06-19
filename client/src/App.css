@@ -1,5 +1,6 @@
 body{
   margin: 0;
+  background-color: var(--bg-dark-black);
 }
 
 :root {
@@ -13,8 +14,13 @@ body{
 
 .App {
   font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
 }
 
 a:hover {
   cursor: pointer;
+}
+
+.Filler {
+  height: 6em;
 }

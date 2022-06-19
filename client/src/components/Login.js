@@ -4,10 +4,41 @@ import GoogleButton from 'react-google-button';
 import {Link, useNavigate} from 'react-router-dom';
 import useInputState from '../hooks/useInputState';
 import { useUserAuth } from '../context/UserAuthContext';
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
 
+const useStyles = makeStyles({
+  root: {
+    fontFamily: "font-family: 'Poppins', sans-serif",
+    backgroundColor: "var(--bg-light-black)",
+    border: null,
+    color: "var(--text-primary)",
+    width: "85%",
+    fontSize: "1.1em",
+    margin: "1em 2em",
+    "& .MuiInputBase-root": {
+        color: "white",
+    },
+    "& .MuiFormLabel-root": {
+        color: "white",
+    },
+    '& .MuiOutlinedInput-root': {
+        '& fieldset': {
+          borderColor: 'white',
+        },
+        '&:hover fieldset': {
+          borderColor: 'white',
+        },
+        '&.Mui-focused fieldset': {
+          borderColor: 'white',
+        },
+      },
+  },
+});
 
 function Login(props) {
 
+    const classes = useStyles();
     const [email,handleEmail,resetEmail] = useInputState("");
     const [password,handlePassword,resetPassword] = useInputState("");
     const [error, setError] = useState("");
@@ -63,8 +94,22 @@ function Login(props) {
                 <div className='Form'>
                     {error && <p> {error} </p>}
                     <form onSubmit={handleSubmit}>
-                        <input className='Form-Input' placeholder='Email' value={email} onChange={handleEmail}/>
-                        <br/><input className='Form-Input' placeholder='Password' value={password} onChange={handlePassword}/>
+                        <TextField 
+                            className={classes.root} 
+                            id="outlined-basic" 
+                            label="Email" 
+                            variant="outlined"
+                            value={email} 
+                            onChange={handleEmail} />
+                        <br/>
+                        <TextField
+                            className={classes.root}
+                            id="password"
+                            label="Password"
+                            type="password"
+                            variant='outlined'
+                            value={password}
+                            onChange={handlePassword} />
                         <button className='Form-Button'> Login</button>
                         <br/>
                         <p className='Login-link'>Don't have an account? <Link to="/signup" >Signup here</Link></p>

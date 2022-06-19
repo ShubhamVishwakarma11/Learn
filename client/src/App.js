@@ -13,6 +13,7 @@ function App() {
       
       <UserAuthContextProvider>
       <NavBar/>
+      <div className="Filler"></div>
         <Routes>
           <Route path="/login" element={<Login/>} />
           <Route path="/signup" element={<SignUp/>} />
