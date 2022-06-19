@@ -88,8 +88,9 @@
 
 .Signup-link {
     color: var(--text-primary);
-    text-align: center;
+    /* text-align: center; */
     margin: 1em 2em;
+    /* margin: 1em 2em; */
 }
 
 .Google-button-div {
@@ -97,6 +98,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1em;
+    /* padding: 1em; */
     border-radius: 0.4em;
 }

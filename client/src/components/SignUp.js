@@ -26,10 +26,10 @@ function SignUp(props) {
         if(password === cPassword) {
             try{
                 await signUp(email,password);
-                navigate("/login");
+                navigate("/home");
                 
             } catch (err) {
-                console.log("ERORRRRRRRR!");
+                console.log("ERRORRRRRRRR!");
                 setError(err.message);
             }
         }

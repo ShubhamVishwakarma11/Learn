@@ -1,7 +1,15 @@
 import React from 'react';
+import { Navigate } from 'react-router-dom';
+import { useUserAuth } from '../context/UserAuthContext';
 
-function ProtectedRoutes() {
-    
+
+const ProtectedRoutes = ({children}) => {
+    const {user} = useUserAuth();
+    if (!user) {
+        alert("You are not authorised to visit this page");
+        return <Navigate to="/login" />;
+    }
+    return children;
 }
 
 export default ProtectedRoutes;

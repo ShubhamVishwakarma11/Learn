@@ -12,7 +12,7 @@ function Login(props) {
     const [password,handlePassword,resetPassword] = useInputState("");
     const [error, setError] = useState("");
 
-    const {logIn} = useUserAuth();
+    const {logIn,googleSignIn} = useUserAuth();
 
     const navigate = useNavigate();
 
@@ -20,13 +20,21 @@ function Login(props) {
         e.preventDefault();
         resetEmail();
         resetPassword();
-        setError("");
+        // setError("");
         try{
             await logIn(email,password);
             navigate("/home");
-            
-        } catch (err) {
-            console.log("ERORRRRRRRR!");
+        } catch(err) {
+            setError(err.message);
+        }
+    }
+    
+    const handleGoogleSignIn = async (e) => {
+        e.preventDefault();
+        try{
+            await googleSignIn();
+            navigate("/home");
+        } catch(err) {
             setError(err.message);
         }
     }
@@ -55,19 +63,19 @@ function Login(props) {
                 <div className='Form'>
                     {error && <p> {error} </p>}
                     <form onSubmit={handleSubmit}>
-                        <input className='Form-Input' placeholder='Username' value={email} onChange={handleEmail}/>
+                        <input className='Form-Input' placeholder='Email' value={email} onChange={handleEmail}/>
                         <br/><input className='Form-Input' placeholder='Password' value={password} onChange={handlePassword}/>
                         <button className='Form-Button'> Login</button>
                         <br/>
                         <p className='Login-link'>Don't have an account? <Link to="/signup" >Signup here</Link></p>
                     </form>
                 </div>
-                <br/>
+                {/* <br/>    */}
                 <div className='Google-button-div'>
                     <GoogleButton 
                         type='dark'
                         label='Log in with Google'
-                        onClick={() => { console.log('Google button clicked') }}  
+                        onClick={handleGoogleSignIn}  
                     />
                 </div>
             </div>
