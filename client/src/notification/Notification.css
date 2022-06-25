@@ -1,0 +1,74 @@
+.Notification-List {
+    position: fixed;
+    top: 3em;
+    right: 1em;
+    width: 300px;
+    z-index: 100;
+}
+
+.Notification {
+    margin: 1em 0 0;
+    border-radius: 0.3em;
+    overflow: hidden;
+    animation: SlideLeft 0.5s;
+    animation-fill-mode: forwards;
+    width: 300px;
+}
+
+@keyframes SlideLeft {
+    0% {
+      margin-left: 120%;
+    }
+    100% {
+        margin-left: 0% ;
+    }
+}
+
+@keyframes SlideRight {
+    0% {
+      margin-left: 0%;
+    }
+    100% {
+        margin-left: 120% ;
+    }
+}
+
+.Notification.exit {
+    animation: SlideRight 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.Notification p {
+    margin: 0;
+    padding: 1em;
+    color: white;
+}
+
+.Notification-Timebar {
+    height: 0.5em;
+}
+
+.Notification.success {
+    background-color: #61DE70;
+}
+.Notification-Timebar.success {
+    background-color: green;
+}
+
+.Notification.error {
+    background-color: #EB001B;
+}
+.Notification-Timebar.error {
+    background-color: orange;
+}
+
+.Notification-Close-Btn {
+    position: relative;
+    display: inline;
+    top: 10px; 
+    left: 270px;
+}
+
+.Notification-Close-Btn:hover {
+    cursor: pointer;
+}
